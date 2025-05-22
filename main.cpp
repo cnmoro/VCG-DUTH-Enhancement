@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     //Read Image
     Mat ImageIn;
     ImageIn.data = NULL;
-    ImageIn = imread(NameIn, CV_LOAD_IMAGE_GRAYSCALE);
+    ImageIn = imread(NameIn, cv::IMREAD_GRAYSCALE);
 	Mat Anisotropic = AnisotropicDiffusion(ImageIn, 10, 10);
     Mat OffCell = OffCellImageDynamic(Anisotropic,3 , 1);
     imwrite(NameOut, OffCell);
